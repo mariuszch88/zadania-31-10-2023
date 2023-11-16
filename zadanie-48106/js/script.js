@@ -7,18 +7,18 @@ const getData = () => {
     fetch(' https://akademia108.pl/api/ajax/get-post.php').then(res => res.json())
         .then(data => {
 
-            let pId = document.creatElement('p');
-            let pUserId = document.creatElement('p');
-            let pTitle = document.creatElement('p');
-            let pBody = document.creatElement('p');
+            let pId = document.createElement('p');
+            let pUserId = document.createElement('p');
+            let pTitle = document.createElement('p');
+            let pBody = document.createElement('p');
 
-            pId.InnerText = `post ID: ${data.id}`;
+            pId.innerText = `post ID: ${data.id}`;
             pUserId.innerText = `User ID: ${data.userId}`;
             pTitle.innerText = `Title: ${data.title}`;
             pBody.innerText = `Body: ${data.body}`;
             let hr = document.createElement('hr');
 
-            document.body.appendChild(pID);
+            document.body.appendChild(pId);
             document.body.appendChild(pUserId);
             document.body.appendChild(pTitle);
             document.body.appendChild(pBody);
@@ -27,7 +27,9 @@ const getData = () => {
             // console.log(data);
         })
 
-        .catch.error(error);
+        .catch(error => {
+            console.error(error);
+        })
     console.log('getData()');
 }
 
