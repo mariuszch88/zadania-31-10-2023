@@ -11,7 +11,7 @@ const showPreloader = () => {
     let preloader = document.getElementById('preloader');
     console.log('showPreloader()');
     preloader.style.display = 'block';
-    preloading = true;
+    preLoading = true;
 }
 
 const hidePreloader = () => {
@@ -19,12 +19,12 @@ const hidePreloader = () => {
     let preloader = document.getElementById('preloader');
     console.log('hidePreloader()');
     preloader.style.display = 'none';
-    preloading = false;
+    preLoading = false;
 }
 
 const getData = () => {
 
-    if (preloading) {
+    if (!preLoading) {
 
         showPreloader();
 
@@ -95,7 +95,7 @@ const scrollToEndOfPage = () => {
     if (sumScrollTopClientHeight >= scrollHeight) {
 
         endOfThePage += 1;
-        console.log('Scrolled to the end of page: ${endOfThePage}');
+        console.log('Scrolled to the end of page: ${"endOfThePage"}');
 
 
 
